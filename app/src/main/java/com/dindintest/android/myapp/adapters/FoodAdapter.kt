@@ -1,5 +1,9 @@
 package com.dindintest.android.myapp.adapters
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.ContentValues.TAG
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,8 +14,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.dindintest.android.myapp.data.FoodModel
 import com.dindintest.android.myapp.R
+import com.dindintest.android.myapp.data.FoodModel
+import kotlinx.coroutines.delay
 
 
 class FoodAdapter(private val cartListener: CartlistListener) :
@@ -49,10 +54,34 @@ class FoodAdapter(private val cartListener: CartlistListener) :
     holder.cartButton.text = "${food.price} usd"
 
 
-    holder.cartButton.setOnClickListener {
-      holder.cartButton_super.visibility = View.VISIBLE
+
+    holder.cartButton_super.setOnClickListener {
+      setAlphaAnimation(holder.cartButton_super)
       cartListener.addToCart(food.id)
     }
+  }
+
+  private fun setAlphaAnimation(v: View) {
+    val fadeOut = ObjectAnimator.ofFloat(v, "alpha", 1f, 0.0f)
+    fadeOut.duration = 1500
+    val fadeIn = ObjectAnimator.ofFloat(v, "alpha", 0.2f, 1f)
+    fadeIn.duration = 500
+
+    val mAnimationSet = AnimatorSet()
+
+    mAnimationSet.play(fadeOut).after(fadeIn)
+    mAnimationSet.startDelay = 100
+    mAnimationSet.addListener(object : AnimatorListenerAdapter() {
+      override fun onAnimationEnd(animation: Animator?) {
+        super.onAnimationEnd(animation)
+        mAnimationSet.removeAllListeners();
+        mAnimationSet.end();
+        mAnimationSet.cancel();
+        v.alpha = 0f
+      }
+    })
+
+    mAnimationSet.start()
   }
 
   inner class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

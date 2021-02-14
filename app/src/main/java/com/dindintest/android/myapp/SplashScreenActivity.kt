@@ -18,6 +18,8 @@ class SplashScreenActivity : AppCompatActivity() {
 
     // make the activity full screen
     requestWindowFeature(Window.FEATURE_NO_TITLE)
+    setContentView(R.layout.splash)
+
     supportActionBar?.hide()
     window.setFlags(
         WindowManager.LayoutParams.FLAG_FULLSCREEN,

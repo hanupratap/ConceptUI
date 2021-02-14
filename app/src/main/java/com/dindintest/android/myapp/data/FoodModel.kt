@@ -5,5 +5,5 @@ data class FoodModel(
         val name: String,
         val desc: String,
         val price: Int,
-        val incart: Boolean
+        val incart: Int
 )

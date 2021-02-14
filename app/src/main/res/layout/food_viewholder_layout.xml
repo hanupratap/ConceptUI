@@ -67,7 +67,7 @@
         android:id="@+id/add_cart_button_superpose"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:alpha="0"
         android:layout_margin="10dp"
         android:text="Added +1"
         android:textColor="@color/colorPrimary"

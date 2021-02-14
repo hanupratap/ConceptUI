@@ -123,21 +123,6 @@ class AllFoodFragment : BaseMvRxFragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-//    foodAdapter = FoodAdapter(object : FoodAdapter.WatchlistListener {
-//      override fun addToCart(movieId: Long) {
-//        // call ViewModel to add movie to watchlist
-//        foodViewModel.addFood(movieId)
-//      }
-//
-//      override fun removeFromCart(movieId: Long) {
-//        // call ViewModel to remove movie from watchlist
-//        foodViewModel.removeFoodFromCart(movieId)
-//      }
-//    })
-//    all_movies_recyclerview.adapter = foodAdapter
-//    foodViewModel.errorMessage.observe(viewLifecycleOwner, Observer {
-//      Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
-//    })
 
     counter_fab.setOnClickListener{
       val mFragment = CartFragment()
@@ -150,39 +135,5 @@ class AllFoodFragment : BaseMvRxFragment() {
 
   }
 
-//  override fun invalidate() {
-//    withState(foodViewModel) { state ->
-//      when (state.dishes) {
-//        is Loading -> {
-//          progress_bar.visibility = View.VISIBLE
-//          all_movies_recyclerview.visibility = View.GONE
-//        }
-//        is Success -> {
-//          progress_bar.visibility = View.GONE
-//          all_movies_recyclerview.visibility = View.VISIBLE
-//          foodAdapter.setMovies(state.dishes.invoke())
-//        }
-//        is Fail -> {
-//          Toast.makeText(requireContext(), "Failed to load all dishes", Toast.LENGTH_SHORT).show()
-//        }
-//      }
-//    }
-//  }
 
-//  override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-//    inflater.inflate(R.menu.cartlist, menu)
-//    super.onCreateOptionsMenu(menu, inflater)
-//  }
-//
-//  override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//    if (item.itemId == R.id.cartlist) {
-//      val mFragment = FoodFragment()
-//      val transaction = requireFragmentManager().beginTransaction()
-//      transaction.replace(R.id.fragment_container, mFragment)
-//      transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-//      transaction.addToBackStack(null)
-//      transaction.commit()
-//    }
-//    return super.onOptionsItemSelected(item)
-//  }
 }

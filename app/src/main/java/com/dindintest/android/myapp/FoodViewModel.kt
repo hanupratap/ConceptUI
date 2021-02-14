@@ -33,6 +33,7 @@ class FoodViewModel(
           .execute {
               copy(sushis = it)
           }
+
   }
 
     fun getItemsInCart():MutableList<FoodModel>{
@@ -209,7 +210,7 @@ class FoodViewModel(
   companion object : MvRxViewModelFactory<FoodViewModel, FoodState> {
     override fun create(viewModelContext: ViewModelContext,
         state: FoodState
-    ): FoodViewModel? {
+    ): FoodViewModel {
       val watchlistRepository = viewModelContext.app<FoodApp>().watchlistRepository
       return FoodViewModel(state, watchlistRepository)
     }

@@ -12,13 +12,8 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-
-
-//    val allDishesFragment = PizzaFragment()
       val allDishesFragment = AllFoodFragment()
-//    val transaction = supportFragmentManager.beginTransaction()
-//    transaction.replace(R.id.fragment_container, allMoviesFragment)
-//    transaction.commit()
+
     val transaction = supportFragmentManager.beginTransaction()
       transaction.replace(R.id.fragment_container, allDishesFragment)
       transaction.commit()

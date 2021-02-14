@@ -56,7 +56,7 @@ class FoodFragment : BaseMvRxFragment() {
           showLoader()
         }
         is Success -> {
-          val foodAddedtoCart = state.pizzas.invoke().filter { it.incart }
+          val foodAddedtoCart = state.pizzas.invoke().filter { it.incart>0 }
           showDishListed(foodAddedtoCart)
         }
         is Fail -> {
