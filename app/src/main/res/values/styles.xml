@@ -1,0 +1,29 @@
+<resources>
+
+  <!-- Base application Theme -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:windowTranslucentStatus">true</item>
+  </style>
+
+  <!-- Splash Screen Theme -->
+  <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_background</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+  </style>
+
+
+  <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
+    <item name="android:textSize">36sp</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="textAllCaps">false</item>
+
+
+  </style>
+
+
+</resources>

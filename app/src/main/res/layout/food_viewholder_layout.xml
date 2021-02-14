@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="30dp"
+    android:layout_margin="20dp"
+    app:cardElevation="5dp"
+    android:background="@color/cardview_light_background"
+    >
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/dish_poster_imageview"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_height="400dp"
+        tools:srcCompat="@tools:sample/avatars"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dish_name_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:maxLines="2"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@id/add_cart_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dish_poster_imageview"
+        tools:text="Pulp Fiction" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="60dp"
+        android:text="This is some description"
+        app:layout_constraintTop_toBottomOf="@+id/dish_name_textview"
+        tools:layout_editor_absoluteX="-25dp" />
+
+    <Button
+        android:id="@+id/add_cart_button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="40 usd"
+        android:textColor="@android:color/white"
+        android:background="@drawable/capsule"
+        android:backgroundTint="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        />
+
+    <Button
+        android:id="@+id/add_cart_button_superpose"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:alpha="0"
+        android:layout_margin="8dp"
+        android:text="Added +1"
+        android:textColor="@color/cardview_light_background"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/capsule"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

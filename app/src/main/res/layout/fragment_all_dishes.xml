@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="false"
+    android:background="@color/cardview_light_background"
+    >
+
+  <com.google.android.material.appbar.AppBarLayout
+      android:layout_width="match_parent"
+      android:layout_height="450dp"
+      android:id="@+id/appbar"
+      android:fitsSystemWindows="false"
+      >
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:contentScrim="@color/cardview_light_background"
+        app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+        android:background="@color/cardview_light_background"
+        android:id="@+id/collapsing_toolbar"
+        >
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pizza"
+            app:layout_collapseMode="parallax"
+            />
+
+        <!--https://github.com/OpenSooq/Pluto -->
+        <!--                        <com.opensooq.pluto.PlutoView-->
+        <!--                            android:id="@+id/slider_view"-->
+        <!--                            android:layout_width="match_parent"-->
+        <!--                            android:layout_height="wrap_content"-->
+        <!--                            app:indicator_visibility="true"-->
+        <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                            app:layout_constraintStart_toStartOf="parent"-->
+        <!--                            app:layout_constraintTop_toTopOf="parent"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="413dp"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+          <TextView
+              style="@style/TextAppearance.AppCompat.Title"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:text="Karazov"
+              android:textAlignment="center"
+              android:textColor="@color/cardview_light_background" />
+
+          <TextView
+              style="@style/TextAppearance.AppCompat.Body1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="delivery"
+
+              android:textAlignment="center"
+              android:textColor="@color/cardview_light_background" />
+        </LinearLayout>
+      </FrameLayout>
+
+
+      <androidx.appcompat.widget.Toolbar
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          app:layout_collapseMode="pin"
+          android:visibility="gone"
+          android:textAlignment="center"
+          />
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+  </com.google.android.material.appbar.AppBarLayout>
+
+
+  <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="-35dp"
+      android:background="@drawable/bg_scroll_main"
+      app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+         >
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorHeight="0dp"
+            android:layout_marginTop="35dp"
+            app:tabRippleColor="@android:color/transparent"
+
+            android:layout_gravity="center_horizontal"
+            app:tabTextAppearance="@style/CustomTabStyle"
+            />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/mviewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            />
+
+    </LinearLayout>
+
+  </androidx.core.widget.NestedScrollView>
+
+
+  <com.andremion.counterfab.CounterFab
+      android:id="@+id/counter_fab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:backgroundTint="@color/cardview_light_background"
+      android:tint="@color/cardview_dark_background"
+      android:src="@drawable/ic_baseline_shopping_cart_24"
+      android:layout_gravity="bottom|end"
+      android:layout_margin="10dp"
+      />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
