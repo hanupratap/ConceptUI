@@ -65,14 +65,13 @@
 
     <Button
         android:id="@+id/add_cart_button_superpose"
-        android:layout_width="210dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:alpha="0"
-        android:layout_margin="8dp"
+        android:layout_margin="10dp"
         android:text="Added +1"
-        android:textColor="@color/cardview_light_background"
-        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/colorPrimary"
+        android:backgroundTint="@color/colorAccent"
         android:background="@drawable/capsule"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

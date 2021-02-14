@@ -12,7 +12,7 @@ android {
   compileSdkVersion rootProject.ext.compileSdkVersion
 
   defaultConfig {
-    applicationId "com.raywenderlich.android.watchlist"
+    applicationId "com.dindintest.android.myapp"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 1
@@ -63,6 +63,7 @@ dependencies {
 
   // FAB Counter
   implementation 'com.github.andremion:counterfab:1.2.2'
+
 
 
 }

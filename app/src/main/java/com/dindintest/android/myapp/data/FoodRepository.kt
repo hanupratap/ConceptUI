@@ -6,7 +6,7 @@ import io.reactivex.schedulers.Schedulers
 
 class FoodRepository {
 
-   val inCart = mutableListOf<FoodModel>()
+   var inCart = mutableListOf<FoodModel>()
 
    private val pizzas = mutableListOf<FoodModel>()
 
@@ -46,7 +46,6 @@ class FoodRepository {
                 15,
                 false
             )
-
         ))
         drinks
 
@@ -133,7 +132,7 @@ class FoodRepository {
 
   fun getAllPizzas() = Observable.fromCallable<List<FoodModel>> {
       // Mocking Network Request
-    Thread.sleep(3000)
+    Thread.sleep(1500)
     pizzas.addAll(listOf(
         FoodModel(
             1235,

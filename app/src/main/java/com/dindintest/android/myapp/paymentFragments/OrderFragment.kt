@@ -40,6 +40,8 @@ class OrderFragment : BaseMvRxFragment() {
             override fun removeFromCart(dishId: Long) {
                 // call ViewModel to remove movie from watchlist
                 foodViewModel.removePizza(dishId)
+                foodViewModel.removeDrinks(dishId)
+                foodViewModel.removeSushi(dishId)
             }
         })
         cart_items.adapter = orderAdapter

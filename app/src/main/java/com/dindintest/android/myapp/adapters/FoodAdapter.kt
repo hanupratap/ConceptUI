@@ -53,7 +53,7 @@ class FoodAdapter(private val cartListener: CartlistListener) :
       holder.cartButton_super.visibility = View.VISIBLE
       if (food.incart) {
 
-        cartListener.removeFromCart(food.id)
+//        cartListener.removeFromCart(food.id)
       } else {
         cartListener.addToCart(food.id)
       }

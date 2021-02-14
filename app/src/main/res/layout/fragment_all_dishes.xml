@@ -28,27 +28,32 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           >
-        <ImageView
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/pizza"-->
+<!--            app:layout_collapseMode="parallax"-->
+<!--            />-->
+
+        <androidx.viewpager2.widget.ViewPager2
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/pizza"
-            app:layout_collapseMode="parallax"
-            />
+          android:id="@+id/introSlider_viewPager"
 
-        <!--https://github.com/OpenSooq/Pluto -->
-        <!--                        <com.opensooq.pluto.PlutoView-->
-        <!--                            android:id="@+id/slider_view"-->
-        <!--                            android:layout_width="match_parent"-->
-        <!--                            android:layout_height="wrap_content"-->
-        <!--                            app:indicator_visibility="true"-->
-        <!--                            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--                            app:layout_constraintStart_toStartOf="parent"-->
-        <!--                            app:layout_constraintTop_toTopOf="parent"/>-->
+          />
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/indicatorContainer"
+              android:orientation="horizontal"
+              android:layout_marginBottom="50dp"
+              android:layout_gravity="center_horizontal|bottom"
+              />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="413dp"
+            android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:orientation="vertical">
 
@@ -58,6 +63,7 @@
               android:layout_height="wrap_content"
               android:layout_marginTop="20dp"
               android:text="Karazov"
+              android:textSize="23sp"
               android:textAlignment="center"
               android:textColor="@color/cardview_light_background" />
 
@@ -66,7 +72,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="delivery"
-
+              android:textSize="16sp"
               android:textAlignment="center"
               android:textColor="@color/cardview_light_background" />
         </LinearLayout>
@@ -105,7 +111,6 @@
             app:tabIndicatorHeight="0dp"
             android:layout_marginTop="35dp"
             app:tabRippleColor="@android:color/transparent"
-
             android:layout_gravity="center_horizontal"
             app:tabTextAppearance="@style/CustomTabStyle"
             />
