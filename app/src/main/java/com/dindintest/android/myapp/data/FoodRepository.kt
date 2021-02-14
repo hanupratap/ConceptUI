@@ -1,6 +1,7 @@
 
 package com.dindintest.android.myapp.data
 
+import com.dindintest.android.myapp.foodtypes.PizzaFragment
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 
@@ -8,15 +9,16 @@ class FoodRepository {
 
    var inCart = mutableListOf<FoodModel>()
 
-   private val pizzas = mutableListOf<FoodModel>()
+   private var pizzas = mutableListOf<FoodModel>()
 
-    private val sushi = mutableListOf<FoodModel>()
+    private var sushi = mutableListOf<FoodModel>()
 
-    private val drinks = mutableListOf<FoodModel>()
+    private var drinks = mutableListOf<FoodModel>()
 
     fun getAllDrinks() = Observable.fromCallable<List<FoodModel>> {
         // Mocking Network Request
         Thread.sleep(1500)
+        drinks.clear()
         drinks.addAll(listOf(
             FoodModel(
                 1835,
@@ -52,29 +54,12 @@ class FoodRepository {
     }.subscribeOn(Schedulers.io())
 
 
-    //Add Drinks to Cart
-    fun addDrinksToCart(foodId: Long): Observable<FoodModel> {
-        return Observable.fromCallable {
-            val item = drinks.first { food -> food.id == foodId }
-            inCart.add(item)
-            item.copy(incart = true)
-        }
-    }
-
-    // Remove Drinks from Cart
-    fun removeDrinksFromCart(foodId: Long): Observable<FoodModel> {
-        return Observable.fromCallable {
-            val item = drinks.first { food -> food.id == foodId }
-            inCart.remove(item)
-            item.copy(incart = false)
-        }
-    }
-
 
 
     fun getAllSushi() = Observable.fromCallable<List<FoodModel>> {
         // Mocking Network Request
         Thread.sleep(1500)
+        sushi.clear()
         sushi.addAll(listOf(
             FoodModel(
                 1035,
@@ -110,6 +95,63 @@ class FoodRepository {
 
     }.subscribeOn(Schedulers.io())
 
+    fun getAllPizzas() = Observable.fromCallable<List<FoodModel>> {
+        // Mocking Network Request
+        Thread.sleep(1500)
+        pizzas.clear()
+        pizzas.addAll(listOf(
+            FoodModel(
+                1235,
+                "Hawaiin",
+                "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2019/01/spicy-hawaiian-pizza.jpg?fit=1200%2C879&ssl=1",
+                15,
+                false
+            ),
+            FoodModel(
+                1236,
+                "Deluxe",
+                "https://www.killingthyme.net/wp-content/uploads/2020/09/veggie-deluxe-pizza-5.jpg",
+                15,
+                false
+            ),
+            FoodModel(
+                1237,
+                "Pepperoni",
+                "https://www.moulinex-me.com/medias/?context=bWFzdGVyfHJvb3R8MTQzNTExfGltYWdlL2pwZWd8aDM2L2g1Mi8xMzA5NzI3MzI2MjExMC5qcGd8N2MxZDhmNmI5ZTgzZDZlZWQyZGQ4YjFlZjUyNDlkMTExYjdkZDdlZmFkY2I0N2NmNjljOGViNmExZjIyMDU4Yw",
+                15,
+                false
+            ),
+            FoodModel(
+                1238,
+                "Paneer Pizza",
+                "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Pooja_Thakur/Tandoori_Paneer_Tikka_Skillet_Pizza.jpg",
+                15,
+                false
+            )
+        ))
+        pizzas
+
+    }.subscribeOn(Schedulers.io())
+
+
+    //Add Drinks to Cart
+    fun addDrinksToCart(foodId: Long): Observable<FoodModel> {
+        return Observable.fromCallable {
+            val item = drinks.first { food -> food.id == foodId }
+            inCart.add(item)
+            item.copy(incart = true)
+        }
+    }
+
+    // Remove Drinks from Cart
+    fun removeDrinksFromCart(foodId: Long): Observable<FoodModel> {
+        return Observable.fromCallable {
+            val item = drinks.first { food -> food.id == foodId }
+            inCart.remove(item)
+            item.copy(incart = false)
+        }
+    }
+
     //Add Sushi to Cart
     fun addSushiToCart(foodId: Long): Observable<FoodModel> {
 
@@ -130,42 +172,7 @@ class FoodRepository {
     }
 
 
-  fun getAllPizzas() = Observable.fromCallable<List<FoodModel>> {
-      // Mocking Network Request
-    Thread.sleep(1500)
-    pizzas.addAll(listOf(
-        FoodModel(
-            1235,
-            "Hawaiin",
-            "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2019/01/spicy-hawaiian-pizza.jpg?fit=1200%2C879&ssl=1",
-                15,
-            false
-        ),
-        FoodModel(
-            1236,
-            "Deluxe",
-            "https://www.killingthyme.net/wp-content/uploads/2020/09/veggie-deluxe-pizza-5.jpg",
-                15,
-            false
-        ),
-        FoodModel(
-            1237,
-            "Pepperoni",
-            "https://www.moulinex-me.com/medias/?context=bWFzdGVyfHJvb3R8MTQzNTExfGltYWdlL2pwZWd8aDM2L2g1Mi8xMzA5NzI3MzI2MjExMC5qcGd8N2MxZDhmNmI5ZTgzZDZlZWQyZGQ4YjFlZjUyNDlkMTExYjdkZDdlZmFkY2I0N2NmNjljOGViNmExZjIyMDU4Yw",
-                15,
-            false
-        ),
-        FoodModel(
-            1238,
-            "Paneer Pizza",
-            "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Pooja_Thakur/Tandoori_Paneer_Tikka_Skillet_Pizza.jpg",
-                15,
-            false
-        )
-    ))
-    pizzas
 
-  }.subscribeOn(Schedulers.io())
 
   // add method to add food to cart
   fun addPizzaToCart(foodId: Long): Observable<FoodModel> {

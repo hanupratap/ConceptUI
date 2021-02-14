@@ -1,10 +1,13 @@
 package com.dindintest.android.myapp
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.airbnb.mvrx.*
 import com.dindintest.android.myapp.data.FoodModel
 import com.dindintest.android.myapp.data.FoodRepository
 import com.dindintest.android.myapp.data.FoodState
+import java.lang.Exception
 
 class FoodViewModel(
     initialState: FoodState,
@@ -15,13 +18,13 @@ class FoodViewModel(
   init {
     setState {
       copy(pizzas = Loading())
-        copy(sushis = Loading())
-        copy(drinks = Loading())
+      copy(sushis = Loading())
+      copy(drinks = Loading())
     }
-    foodRepository.getAllPizzas()
-        .execute {
-          copy(pizzas = it)
-        }
+      foodRepository.getAllPizzas()
+          .execute {
+              copy(pizzas = it)
+          }
       foodRepository.getAllDrinks()
           .execute {
               copy(drinks = it)
@@ -30,7 +33,6 @@ class FoodViewModel(
           .execute {
               copy(sushis = it)
           }
-
   }
 
     fun getItemsInCart():MutableList<FoodModel>{
@@ -44,23 +46,24 @@ class FoodViewModel(
           it.id == dishId
         }
 
-        foodRepository.addPizzaToCart(dishId)
-            .execute {
+      foodRepository.addPizzaToCart(dishId)
+          .execute {
               if (it is Success) {
-                copy(
-                    pizzas = Success(
-                        state.pizzas.invoke().toMutableList().apply {
-                          set(index, it.invoke())
-                        }
-                    )
-                )
+                  copy(
+                      pizzas = Success(
+                          state.pizzas.invoke().toMutableList().apply {
+                              set(index, it.invoke())
+                          }
+                      )
+                  )
               } else if (it is Fail){
-                errorMessage.postValue("Failed to add food to cart")
-                copy()
+                  errorMessage.postValue("Failed to add food to cart")
+                  copy()
               } else {
-                copy()
+                  copy()
               }
-            }
+          }
+
       }
     }
   }

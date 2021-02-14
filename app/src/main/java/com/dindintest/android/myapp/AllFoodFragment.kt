@@ -1,11 +1,11 @@
 package com.dindintest.android.myapp
 
-import android.content.ContentValues.TAG
 import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import android.view.animation.AlphaAnimation
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -23,6 +23,8 @@ import kotlinx.android.synthetic.main.fragment_all_dishes.view.*
 
 class AllFoodFragment : BaseMvRxFragment() {
   private val foodViewModel:FoodViewModel by activityViewModel()
+  val fadeOut = AlphaAnimation(1f, 0f)
+
 
   private val introSliderAdapter = IntroSlideAdapter(
     listOf(
@@ -35,8 +37,10 @@ class AllFoodFragment : BaseMvRxFragment() {
   override fun invalidate() {
 
       val num = foodViewModel.getItemsInCart().size
-      if(num==0)
+    
+      if(num==0) {
         counter_fab.visibility = View.GONE
+      }
       else{
         counter_fab.visibility = View.VISIBLE
         while(num>counter_fab.count && counter_fab.count!=num)

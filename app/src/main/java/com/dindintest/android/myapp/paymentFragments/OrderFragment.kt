@@ -22,6 +22,7 @@ class OrderFragment : BaseMvRxFragment() {
 
     override fun invalidate() {
         orderAdapter.setDishes(foodViewModel.getItemsInCart())
+
     }
 
     override fun onCreateView(
@@ -39,9 +40,9 @@ class OrderFragment : BaseMvRxFragment() {
         orderAdapter = OrderListAdapter(object : OrderListAdapter.CartlistListener {
             override fun removeFromCart(dishId: Long) {
                 // call ViewModel to remove movie from watchlist
-                foodViewModel.removePizza(dishId)
-                foodViewModel.removeDrinks(dishId)
-                foodViewModel.removeSushi(dishId)
+//                foodViewModel.removePizza(dishId)
+//                foodViewModel.removeDrinks(dishId)
+//                foodViewModel.removeSushi(dishId)
             }
         })
         cart_items.adapter = orderAdapter
