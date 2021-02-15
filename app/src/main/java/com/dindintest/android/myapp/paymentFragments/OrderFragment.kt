@@ -16,13 +16,12 @@ import kotlinx.android.synthetic.main.fragment_order.*
 class OrderFragment : BaseMvRxFragment() {
 
     private lateinit var orderAdapter: OrderListAdapter
-
+    var value:Int = 0
 
     private val foodViewModel: FoodViewModel by fragmentViewModel()
 
     override fun invalidate() {
-        orderAdapter.setDishes(foodViewModel.getItemsInCart())
-
+        //
     }
 
     override fun onCreateView(
@@ -45,6 +44,15 @@ class OrderFragment : BaseMvRxFragment() {
 //                foodViewModel.removeSushi(dishId)
             }
         })
+
+        val list = foodViewModel.getItemsInCart()
+        orderAdapter.setDishes(list)
+        for(item in list){
+            value += item.price
+        }
+
+        value_usd.text = "$value usd"
+
         cart_items.adapter = orderAdapter
         foodViewModel.errorMessage.observe(viewLifecycleOwner, Observer {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
