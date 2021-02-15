@@ -45,7 +45,7 @@ class FoodAdapter(private val cartListener: CartlistListener) :
 
     Glide
         .with(holder.itemView)
-        .load(food.desc)
+        .load(food.pic)
         .centerCrop()
         .into(holder.posterImageView)
 
@@ -53,7 +53,7 @@ class FoodAdapter(private val cartListener: CartlistListener) :
 
     holder.cartButton.text = "${food.price} usd"
 
-
+    holder.food_desc.text = food.desc
 
     holder.cartButton_super.setOnClickListener {
       setAlphaAnimation(holder.cartButton_super)
@@ -86,6 +86,7 @@ class FoodAdapter(private val cartListener: CartlistListener) :
 
   inner class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val posterImageView: ImageView = itemView.findViewById(R.id.dish_poster_imageview)
+    val food_desc: TextView = itemView.findViewById(R.id.dish_desc)
     val foodNameTextView: TextView = itemView.findViewById(R.id.dish_name_textview)
     val cartButton: Button = itemView.findViewById(R.id.add_cart_button)
     val cartButton_super: Button = itemView.findViewById(R.id.add_cart_button_superpose)

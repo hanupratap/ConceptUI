@@ -40,12 +40,13 @@
         tools:text="Pulp Fiction" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/dish_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_marginTop="60dp"
         android:text="This is some description"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dish_name_textview"
         tools:layout_editor_absoluteX="-25dp" />
 
@@ -54,29 +55,28 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="40 usd"
-        android:textColor="@android:color/white"
         android:background="@drawable/capsule"
         android:backgroundTint="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="40 usd"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/dish_desc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/dish_poster_imageview" />
 
     <Button
         android:id="@+id/add_cart_button_superpose"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:alpha="0"
         android:layout_margin="10dp"
+        android:layout_marginEnd="8dp"
+        android:alpha="0"
+        android:background="@drawable/capsule"
+        android:backgroundTint="@color/colorAccent"
         android:text="Added +1"
         android:textColor="@color/colorPrimary"
-        android:backgroundTint="@color/colorAccent"
-        android:background="@drawable/capsule"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dish_desc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/dish_poster_imageview" />
   </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

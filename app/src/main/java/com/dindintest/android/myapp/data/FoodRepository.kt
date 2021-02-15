@@ -22,28 +22,32 @@ class FoodRepository {
                 1835,
                 "Beer",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Cs%C3%ADki_s%C3%B6r_a_II._Budapesti_Sz%C3%A9kely_B%C3%A1lon_%281%29.JPG/800px-Cs%C3%ADki_s%C3%B6r_a_II._Budapesti_Sz%C3%A9kely_B%C3%A1lon_%281%29.JPG",
-                15,
+                "200ml",
+                    15,
                 0
             ),
             FoodModel(
                 1836,
                 "Coca Cola",
                 "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1189255149%2F0x0.jpg",
-                15,
+                    "200ml",
+                    25,
                 0
             ),
             FoodModel(
                 1837,
                 "Pepsi",
                 "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator-asia.com/article/2019/10/21/pepsico-s-regional-discomfort-analyst-suggests-deeper-reasoning-behind-brand-s-philippines-and-indonesia-cutbacks/10259416-1-eng-GB/PepsiCo-s-regional-discomfort-Analyst-suggests-deeper-reasoning-behind-brand-s-Philippines-and-Indonesia-cutbacks.jpg",
-                15,
+                    "200ml",
+                    55,
                 0
             ),
             FoodModel(
                 1838,
                 "Chocolate",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Chocolate_and_croissant.jpg/800px-Chocolate_and_croissant.jpg",
-                15,
+                    "200ml",
+                    65,
                 0
             )
         ))
@@ -63,28 +67,32 @@ class FoodRepository {
                 1035,
                 "The egoist",
                 "https://content3.jdmagicbox.com/comp/def_content/japanese_restaurants/default-japanese-restaurants-1.jpg",
-                15,
+                "filled with salmon",
+                    65,
                 0
             ),
             FoodModel(
                 1036,
                 "Califronia",
                 "https://www.kikkoman.com/homecook/search/recipe/img/00005163.jpg",
-                15,
+                    "filled with fish",
+                75,
                 0
             ),
             FoodModel(
                 1037,
                 "Special One",
                 "https://www.nippon.com/en/ncommon/contents/japan-data/169591/169591.jpg",
-                15,
+                    "filled with Bass",
+                155,
                 0
             ),
             FoodModel(
                 1038,
                 "Japanese",
                 "https://media-cdn.tripadvisor.com/media/photo-s/13/bb/08/54/sushi-platter.jpg",
-                15,
+                    "Shark sushi",
+                205,
                 0
             )
 
@@ -102,28 +110,32 @@ class FoodRepository {
                 1235,
                 "Hawaiin",
                 "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2019/01/spicy-hawaiian-pizza.jpg?fit=1200%2C879&ssl=1",
-                15,
+                    "Capsicum, Meat, BBQ",
+                    45,
                 0
             ),
             FoodModel(
                 1236,
                 "Deluxe",
                 "https://www.killingthyme.net/wp-content/uploads/2020/09/veggie-deluxe-pizza-5.jpg",
-                15,
+                    "Capsicum, Meat, BBQ, half-Baked",
+                    55,
                 0
             ),
             FoodModel(
                 1237,
                 "Pepperoni",
                 "https://www.moulinex-me.com/medias/?context=bWFzdGVyfHJvb3R8MTQzNTExfGltYWdlL2pwZWd8aDM2L2g1Mi8xMzA5NzI3MzI2MjExMC5qcGd8N2MxZDhmNmI5ZTgzZDZlZWQyZGQ4YjFlZjUyNDlkMTExYjdkZDdlZmFkY2I0N2NmNjljOGViNmExZjIyMDU4Yw",
-                15,
+                    "Capsicum, Meat, BBQ, Hand-Tossed",
+                    15,
                 0
             ),
             FoodModel(
                 1238,
                 "Paneer Pizza",
                 "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Pooja_Thakur/Tandoori_Paneer_Tikka_Skillet_Pizza.jpg",
-                15,
+                    "Capsicum, Meat, BBQ, Baked",
+                    35,
                 0
             )
         ))

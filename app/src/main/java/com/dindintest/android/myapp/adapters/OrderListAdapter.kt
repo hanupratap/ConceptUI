@@ -45,7 +45,7 @@ class OrderListAdapter(private val cartListener: OrderListAdapter.CartlistListen
 
         Glide
             .with(holder.itemView)
-            .load(food.desc)
+            .load(food.pic)
             .centerCrop()
             .into(holder.dish_img)
 
